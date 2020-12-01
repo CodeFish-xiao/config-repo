@@ -1,0 +1,56 @@
+### 秒杀性能配置
+
+service:
+  ip_sec_access_limit: 1000
+  ip_min_access_limit: 1000
+  user_sec_access_limit: 1000
+  user_min_access_limit: 1000
+  write_proxy2layer_goroutine_num: 100
+  read_proxy2layer_goroutine_num: 100
+  cookie_secretkey: zxfyazzaa
+  refer_whitelist: test,test1
+  AppWriteToHandleGoroutineNum: 10
+  AppReadFromHandleGoroutineNum: 10
+  CoreReadRedisGoroutineNum: 10
+  CoreWriteRedisGoroutineNum: 10
+  CoreHandleGoroutineNum: 10
+  AppWaitResultTimeout: 400
+  CoreWaitResultTimeout: 500
+  MaxRequestWaitTimeout: 500
+  SendToWriteChanTimeout: 500
+  SendToHandleChanTimeout: 500
+  TokenPassWd: go
+  AccessLimitConf:
+        IPSecAccessLimit: 1000000
+        UserSecAccessLimit: 1000000
+        IPMinAccessLimit: 10000000
+        UserMinAccessLimit: 10000000
+redis:
+  host: 39.98.179.73:6379
+  password: 082203
+  db: 0
+  Proxy2layerQueueName: proxy2layer
+  Layer2proxyQueueName: Layer2proxy
+  IdBlackListHash: IdBlackListHash
+  IpBlackListHash: IpBlackListHash
+  IdBlackListQueue: IdBlackListQueue
+  IpBlackListQueue: IpBlackListQueue
+  
+etcd:
+  host: localhost
+  product_key: zxfyazzaa
+
+http:
+  host: localhost
+
+mysql:
+  host: localhost
+  port: 3306
+  user: root
+  pwd: root
+  db: sk-admin
+
+trace:
+  host: 114.67.98.210
+  port: 9411
+  url: /api/v2/spans
